@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open:desktop": "npx cypress open --e2e --browser chrome -e type=desktop"
   },
+  "keywords": [
+    "cypress",
+    "tests",
+    "automation",
+    "PIL"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
