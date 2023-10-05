@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('test tarea', () => {
-    beforeEach('',() => {
+    beforeEach(() => {
         cy.visit("https://www.edenentradas.com.ar/")
     })
 
