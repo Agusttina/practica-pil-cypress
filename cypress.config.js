@@ -1,6 +1,14 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: "Reporte personalizable Agustina",
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
   env: {
     grepFilterSpecs: true,
     grepOmitFiltered: true,
@@ -15,6 +23,8 @@ module.exports = defineConfig({
     baseUrl: "https://www.edenentradas.com.ar/",
     setupNodeEvents(on, config) {
       require("@bahmutov/cy-grep/src/plugin")(config);
+      require('cypress-mochawesome-reporter/plugin')(on);
+      require("cypress-image-diff-js/dist/plugin")(on, config);
       // IMPORTANT: return the config object
       return config;
     },
