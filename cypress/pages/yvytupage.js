@@ -23,6 +23,18 @@ class Yvytu {
   getItemContainer() {
     return cy.get('div[class="flex flex-col font-normal"]');
   }
+  // Como Llegar
+  getGoogleMapContainer() {
+    return cy.get('div[class="w-full h-[800px] map-container"]');
+  }
+
+  getContainerById(id) {
+    return cy.get(`div#${id}`)
+  }
+
+  getComoLLegarImg() {
+    return cy.get('div#como-llegar').find('img')
+  }
 
   //Footer
 

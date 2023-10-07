@@ -77,3 +77,16 @@ Then(
       });
   }
 );
+
+Then(`Se verifica que esta presente el mapa de Google Map con titulo {string}`, (altText) =>{
+  yvytuHome.getGoogleMapContainer().find('iframe').should('have.attr', 'title').should('eq', altText)
+})
+
+Then(`la seccion con el id {string} contiene el texto {string}`, (id, textToCompare) => {
+  yvytuHome.getContainerById(id).should('contain.text', textToCompare)
+})
+
+Then(`Se verifica que la imagen tenga las dimensiones {string} de ancho y {string} de alto`, (width, height) => {
+  yvytuHome.getComoLLegarImg().should('have.css', 'width', `${width}px`)
+  yvytuHome.getComoLLegarImg().should('have.css', 'height', `${height}px`)
+})
